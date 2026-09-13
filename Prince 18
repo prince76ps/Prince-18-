@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Prince 💙</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#06152e,#0b3d91,#071b3a);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+.container{padding:25px;max-width:700px}
+h1{
+  font-size:clamp(45px,10vw,85px);
+  color:#fff;
+  text-shadow:0 0 15px #4db8ff,0 0 35px #168cff;
+  animation:glow 2s infinite alternate;
+}
+h2{font-size:30px;margin:15px 0;color:#8ed8ff}
+p{font-size:19px;line-height:1.7;margin:15px 0}
+.cake{font-size:90px;animation:bounce 1.5s infinite}
+button{
+  margin-top:20px;
+  padding:15px 30px;
+  border:0;
+  border-radius:30px;
+  background:#1597ff;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 0 20px #1597ff;
+}
+button:hover{transform:scale(1.08)}
+#surprise{
+  display:none;
+  margin-top:25px;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+}
+.heart{
+  position:absolute;
+  font-size:25px;
+  animation:fall linear infinite;
+}
+@keyframes glow{
+  from{text-shadow:0 0 10px #4db8ff}
+  to{text-shadow:0 0 30px #00c8ff,0 0 60px #168cff}
+}
+@keyframes bounce{
+  50%{transform:translateY(-15px)}
+}
+@keyframes fall{
+  from{transform:translateY(-100px) rotate(0)}
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="cake">🎂</div>
+
+  <h1>Happy Birthday!</h1>
+  <h2>Prince 💙</h2>
+
+  <p>
+    To an amazing brother — you are more than just family.
+    You are someone who makes life brighter, crazier and more memorable. 🫂
+  </p>
+
+  <p>
+    May your birthday bring you happiness, success, laughter
+    and countless unforgettable moments. ✨
+  </p>
+
+  <button onclick="showSurprise()">🎁 Open Your Surprise</button>
+
+  <div id="surprise">
+    <h2>💙 A Special Message 💙</h2>
+    <p>
+      No matter how much we argue, tease each other or drive each other crazy 😂,
+      you'll always be my brother and I'll always be cheering for you.
+    </p>
+    <p><b>Happy Birthday, Prince! 🥳🎂💙</b></p>
+    <p>Keep smiling. Keep shining. Keep being YOU! ⭐</p>
+  </div>
+</div>
+
+<script>
+function showSurprise(){
+  document.getElementById("surprise").style.display="block";
+  for(let i=0;i<35;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML=["💙","✨","🎉","🎈"][Math.floor(Math.random()*4)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(3+Math.random()*5)+"s";
+    h.style.animationDelay=Math.random()*2+"s";
+    document.body.appendChild(h);
+  }
+}
+</script>
+
+</body>
+</html>
